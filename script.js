@@ -158,7 +158,7 @@ In the end, John would like to have 2 arrays:
 GOOD LUCK 😀
 */
 
-
+/*
 function tipCalculator(bill) {
     var percentage;
     
@@ -184,10 +184,10 @@ var tips = [tipCalculator(bills[0]),
 
 var finalPaidAmount = [bills[0] + tips[0],
                       bills[1] + tips[1],
-                      bills[2] + tips[2],]
+                      bills[2] + tips[2]]
 
 console.log(tips, finalPaidAmount);
-
+*/
 
 /*****************************
 * CODING CHALLENGE 4
@@ -204,9 +204,39 @@ GOOD LUCK 😀
 */
 
 
+var markInfo = {
+    markFullName: 'Mark Miller',
+    massMark: 78,
+    heightMark: 1.69,
+    calcMarkBMI: function() {
+        this.markBmi = this.massMark / (this.heightMark * this.heightMark);
+        return this.markBmi;
+    }
+}
 
+console.log(markInfo.calcMarkBMI());
 
+var johnInfo = {
+    johnFullName: 'John Smith',
+    massJohn: 92,
+    heightJohn: 1.95,
+    calcJohnBMI: function() {
+        this.johnBmi = this.massJohn / (this.heightJohn * this.heightJohn);
+        return this.johnBmi;
+    }
+}
 
+console.log(johnInfo.calcJohnBMI());
+
+if (markInfo.markBmi > johnInfo.johnBmi) {
+    console.log(markInfo.markFullName + ' is heigher BMI than ' + johnInfo.johnFullName);
+    
+}else if (markInfo.markBmi === johnInfo.johnBmi) {
+    console.log('They have the same BMI');
+    
+} else {
+    console.log(johnInfo.johnFullName + ' is heigher BMI than ' + markInfo.markFullName);
+}
 
 
 
