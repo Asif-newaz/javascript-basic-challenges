@@ -264,6 +264,47 @@ GOOD LUCK 😀
 */
 
 
+var john = {
+    fullName: 'John Smith',
+    bills: [124, 48, 268, 180, 42],
+    calcTips: function() {
+        this.tips = [];
+        this.finalValues = [];
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
