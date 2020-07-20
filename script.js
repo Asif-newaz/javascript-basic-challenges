@@ -294,10 +294,10 @@ var john = {
 }
 
 
-john.calcTips();
-console.log(john);
+//john.calcTips();
+//console.log(john);
 
-
+console.log(john.calcTips());
 
 
 
