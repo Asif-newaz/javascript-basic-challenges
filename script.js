@@ -323,12 +323,34 @@ var mark = {
     }
 }
 
+
+function calcAverage(tips) {
+    var sum = 0;
+    
+    for (var i = 0; i < tips.length; i++) {
+        sum = sum + tips[i];
+    }
+    
+    return sum / tips.length;
+}
+
+
+// Do the calculations
 john.calcTips();
 mark.calcTips();
 
+john.average = calcAverage(john.tips);
+mark.average = calcAverage(mark.tips);
+
 console.log(john, mark);
 
-
+if (john.average > mark.average) {
+    console.log(john.fullName + `'s family pays higher tips, with an average of $` + john.average);
+} else if (john.average < mark.average) {
+    console.log(mark.fullName + `'s family pays higher tips, with an average of $` + mark.average);
+} else {
+    console.log('Both family pays same amount of money');
+}
 
 
 
