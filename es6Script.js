@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 ///////////////////////////////////////
 // Coding Challenge #1
 
@@ -17,3 +17,31 @@ HINT: To calculate average of 3 values, add them all together and divide by 3
 HINT: To check if number A is at least double number B, check for A >= 2 * B. Apply this to the team's average scores 😉
 GOOD LUCK 😀
 */
+
+const calcAverage = (score1, score2, score3) => {
+  return (score1 + score2 + score3) / 3;
+};
+
+let scoreDolphins = calcAverage(44, 23, 71);
+let scoreKoalas = calcAverage(65, 54, 49);
+
+const checkWinner = (teamDolphins, teamKoalas) => {
+  if (teamDolphins >= 2 * teamKoalas) {
+    console.log(
+      `Dolphin won the game with score ${teamDolphins} vs. ${teamKoalas}`
+    );
+  } else if (teamKoalas >= 2 * teamDolphins) {
+    console.log(
+      `Koalas won the game with score ${teamKoalas} vs. ${teamDolphins}`
+    );
+  } else {
+    console.log(`No team wins!`);
+  }
+};
+
+checkWinner(scoreDolphins, scoreKoalas);
+
+scoreDolphins = calcAverage(85, 54, 41);
+scoreKoalas = calcAverage(23, 34, 27);
+
+checkWinner(scoreDolphins, scoreKoalas);
