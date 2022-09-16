@@ -18,30 +18,65 @@ HINT: To check if number A is at least double number B, check for A >= 2 * B. Ap
 GOOD LUCK 😀
 */
 
-const calcAverage = (score1, score2, score3) => {
-  return (score1 + score2 + score3) / 3;
+// const calcAverage = (score1, score2, score3) => {
+//   return (score1 + score2 + score3) / 3;
+// };
+
+// let scoreDolphins = calcAverage(44, 23, 71);
+// let scoreKoalas = calcAverage(65, 54, 49);
+
+// const checkWinner = (teamDolphins, teamKoalas) => {
+//   if (teamDolphins >= 2 * teamKoalas) {
+//     console.log(
+//       `Dolphin won the game with score ${teamDolphins} vs. ${teamKoalas}`
+//     );
+//   } else if (teamKoalas >= 2 * teamDolphins) {
+//     console.log(
+//       `Koalas won the game with score ${teamKoalas} vs. ${teamDolphins}`
+//     );
+//   } else {
+//     console.log(`No team wins!`);
+//   }
+// };
+
+// checkWinner(scoreDolphins, scoreKoalas);
+
+// scoreDolphins = calcAverage(85, 54, 41);
+// scoreKoalas = calcAverage(23, 34, 27);
+
+// checkWinner(scoreDolphins, scoreKoalas);
+
+///////////////////////////////////////
+// Coding Challenge #2
+
+/*
+Steven is still building his tip calculator,
+using the same rules as before: Tip 15% of the bill if the bill value is between 50 and 300,
+and if the value is different, the tip is 20%.
+1. Write a function 'calcTip' that takes any bill value as an input and returns the corresponding tip,
+calculated based on the rules above (you can check out the code from first tip calculator challenge if you need to).
+Use the function type you like the most. Test the function using a bill value of 100.
+2. And now let's use arrays! So create an array 'bills' containing the test data below.
+3. Create an array 'tips' containing the tip value for each bill, calculated from the function you created before.
+4. BONUS: Create an array 'total' containing the total values, so the bill + tip.
+TEST DATA: 125, 555 and 44
+HINT: Remember that an array needs a value in each position,
+and that value can actually be the returned value of a function!
+So you can just call a function as array values (so don't store the tip values in separate variables first,
+but right in the new array) 😉
+GOOD LUCK 😀
+*/
+
+const calcTip = function (bill) {
+  return bill >= 50 && bill <= 300 ? (15 / 100) * bill : (20 / 100) * bill;
 };
 
-let scoreDolphins = calcAverage(44, 23, 71);
-let scoreKoalas = calcAverage(65, 54, 49);
+const bills = [125, 555, 44];
+console.log(calcTip(bills[0]));
 
-const checkWinner = (teamDolphins, teamKoalas) => {
-  if (teamDolphins >= 2 * teamKoalas) {
-    console.log(
-      `Dolphin won the game with score ${teamDolphins} vs. ${teamKoalas}`
-    );
-  } else if (teamKoalas >= 2 * teamDolphins) {
-    console.log(
-      `Koalas won the game with score ${teamKoalas} vs. ${teamDolphins}`
-    );
-  } else {
-    console.log(`No team wins!`);
-  }
-};
+const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
+console.log(tips);
 
-checkWinner(scoreDolphins, scoreKoalas);
+const total = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
 
-scoreDolphins = calcAverage(85, 54, 41);
-scoreKoalas = calcAverage(23, 34, 27);
-
-checkWinner(scoreDolphins, scoreKoalas);
+console.log(total);
