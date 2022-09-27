@@ -67,16 +67,54 @@ but right in the new array) 😉
 GOOD LUCK 😀
 */
 
-const calcTip = function (bill) {
-  return bill >= 50 && bill <= 300 ? (15 / 100) * bill : (20 / 100) * bill;
+// const calcTip = function (bill) {
+//   return bill >= 50 && bill <= 300 ? (15 / 100) * bill : (20 / 100) * bill;
+// };
+
+// const bills = [125, 555, 44];
+// console.log(calcTip(bills[0]));
+
+// const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
+// console.log(tips);
+
+// const total = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
+
+// console.log(total);
+
+//Challenge 3
+const mark = {
+  fullName: "Mark",
+  mass: 78,
+  height: 1.69,
+
+  calcBMI: function () {
+    this.BMI = this.mass / (this.height * this.height);
+    return this.BMI;
+  },
 };
 
-const bills = [125, 555, 44];
-console.log(calcTip(bills[0]));
+const john = {
+  fullName: "John",
+  mass: 92,
+  height: 1.95,
 
-const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
-console.log(tips);
+  calcBMI: function () {
+    this.BMI = this.mass / (this.height * this.height);
+    return this.BMI;
+  },
+};
 
-const total = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
+const markBMI = mark.calcBMI();
+const johnBMI = john.calcBMI();
 
-console.log(total);
+console.log(john.BMI);
+
+if (mark.BMI > john.BMI) {
+  console.log(
+    `${mark.fullName}'s BMI (${mark.BMI}) is higher than ${john.fullName}'s BMI!`
+  );
+} else {
+  console.log(
+    `${john.fullName}'s BMI (${john.BMI}) is higher than ${mark.fullName}'s BMI!`
+  );
+}
