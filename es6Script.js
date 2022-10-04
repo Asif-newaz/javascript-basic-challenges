@@ -120,29 +120,30 @@ GOOD LUCK 😀
 // }
 
 //Challenge 4
-const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
-
-const tipsAndTotals = [];
-
 const calcTip = function (bill) {
   return bill >= 50 && bill <= 300 ? (15 / 100) * bill : (20 / 100) * bill;
 };
 
-// console.log(calcTip(bills[0]));
+const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
 
-// const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
-// console.log(tips);
-
-// const total = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
-
-// console.log(total);
-
-// tipsAndTotals[0] = total;
-// console.log(tipsAndTotals);
+const tipsAndTotals = [];
+const tips = [];
 
 for (let i = 0; i <= bills.length - 1; i++) {
-  const tips = calcTip(bills[i]);
-  tipsAndTotals[i] = tips + bills[i];
+  const tip = calcTip(bills[i]);
+  tips.push(tip);
+  tipsAndTotals.push(tip + bills[i]);
 }
 
-console.log(tipsAndTotals);
+console.log(bills, tips, tipsAndTotals);
+
+const calcAverage = function (arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+  return sum / arr.length;
+};
+
+console.log(calcAverage([2, 3, 7]));
+console.log(calcAverage(tipsAndTotals));
